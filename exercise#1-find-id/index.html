@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="layers"></div> 
+    <h1></h1>
+    <p></p>
+    <script>
+        let origColor;
+        document.addEventListener("DOMContentLoaded", loadSvg);
+
+        async function loadSvg() {
+        let svgData = await fetch("layers.svg");
+        let mySvg = await svgData.text();
+            console.log (mySvg);
+
+        document.querySelector("#layers").innerHTML = mySvg;
+
+        // document.querySelector("#green").setAttribute("fill","#FFF240");
+        }   
+
+
+        document.querySelector("#layers").addEventListener("mouseover", showElement);
+        function showElement (){
+            // gets id when mouseover
+            console.log(event.target.getAttribute("id"));
+        }
+
+        document.querySelector("#layers").addEventListener("click", showText);
+        function showText(){
+            //shows the name of the thing by id
+            document.querySelector("h1").textContent = event.target.getAttribute("id");
+        }
+
+
+        // document.querySelector("#layers").addEventListener("mouseover", showElement);
+        // function showElement (){
+        //     let id = event.target.getAttribute("id");
+        //     //shows the color by id
+        //     origColor = document.querySelector("#"+id).getAttribute("fill");
+        //     console.log(origColor);
+    
+        //}
+
+        //fetching json
+
+        // async function loadJson(){
+        //     let jsonData = await fetch ("items.json");
+        //     let myJson = await jsonData.text();
+        //     console.log(myJson);
+
+        // document.querySelector("#pie".innerHTML) = myJson;
+        // }
+        fetch('items.json')
+            .then(function(response) {
+            return response.json();
+        })
+            .then(function(myJson) {
+            console.log(myJson);
+        });
+
+    // alert(myJson["type"]);
+	// alert(myJson.type);
+
+        // document.querySelector("items.json").addEventListener("click", showJson);
+        // function showJson(){
+        // myJson.forEach(element => {
+        //     document.querySelector("p").textContent = event.target.getAttribute("id");
+        // });
+        
+        //}
+    //     let myJson = document.querySelector.getAttribute("items.json");
+    //     function showDescription(){
+    //     document.querySelector("p").textContent =  "#id".id + " " + "#id".item + " " + "#id".type + " "; 
+    // }
+    //     //  let pContent = document.querySelector("p").myJson;
+        //  console.log(pContent)
+        //  forEach "#id".item + " " + "#id".type + " "; 
+        //  pContent.forEach(id => {
+        //     document.querySelector("p").textContent;
+        //  });
+        // });
+    </script>
+
+
+
+</body>
+</html>

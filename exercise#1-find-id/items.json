@@ -1,0 +1,22 @@
+[
+    {
+      "id": "bike",
+      "item":"Bike",
+      "type":"mountain",
+      "age":3,
+      "colour":"green"
+    },
+    {
+      "id": "phone",
+      "item":"Phone",
+      "type":"waterproof",
+      "age":1,
+      "colour":"white"
+    },
+    {
+      "id": "mac",
+      "item":"Mac",
+      "type":"Air",
+      "age":2,
+      "colour":"silver"
+    }]
